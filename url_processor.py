@@ -35,7 +35,6 @@ def extract_url_features(url):
     features['prefix_suffix'] = 1 if '-' in hostname else 0
 
     # Advanced Features Requiring More Logic or External Tools
-    features['ip'] = socket.gethostbyname(hostname)
     host_words = re.split('\W+', hostname)
     path_words = re.split('\W+', path)
     features['shortest_word_host'] = len(min(host_words, key=len)) if host_words else 0
@@ -43,7 +42,7 @@ def extract_url_features(url):
     features['longest_word_path'] = len(max(path_words, key=len)) if path_words else 0
 
     # Domain Age, Google Index, Page Rank - Requires external APIs or services
-    domain_info = whois.whois(hostname)
+    domain_info = whois.query(hostname)
     features['domain_age'] = (datetime.now() - domain_info.creation_date).days if domain_info.creation_date else -1
 
     return features
