@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>URL Analyzer</title>
+</head>
+<body>
+<div class="container">
+    <h1>URL Phishing Analyzer</h1>
+    <p>Enter a URL below to analyze whether it's a potential phishing site. This project will extract certain features from the link you provide, and perform an inference based on a pre-trained RandomForest classification model based on <a href="https://data.mendeley.com/datasets/c2gw7fy2j4/3">this</a> dataset.</p>
+    <form action="/analyze" method="post">
+        <input type="text" name="url" placeholder="Enter URL to analyze">
+        <input type="submit" value="Analyze">
+    </form>
+    <!-- Insert your sections here -->
+    <a href="https://github.com/rodmarkun/Phishing-Detector-Webpage" class="github-link">View on GitHub</a>
+    <div class="website-list non-phishing">
+        <h2>Non-Phishing Websites Examples</h2>
+        <div class="website"><a href="https://github.com/rodmarkun" target="_blank">https://github.com/rodmarkun/</a></div>
+        <div class="website"><a href="https://www.reddit.com/r/MachineLearning" target="_blank">https://www.reddit.com/r/MachineLearning/</a></div>
+        <div class="website"><a href="https://calendar.google.com/calendar/u/0/r/week" target="_blank">https://calendar.google.com/calendar/u/0/r/week</a></div>
+        <div class="website"><a href="https://data.mendeley.com/datasets/c2gw7fy2j4/3" target="_blank">https://data.mendeley.com/datasets/c2gw7fy2j4/3</a></div>
+        <div class="website"><a href="https://www.kaggle.com/datasets/shashwatwork/web-page-phishing-detection-dataset?rvi=1" target="_blank">https://www.kaggle.com/datasets/shashwatwork/web-page-phishing-detection-dataset?rvi=1</a></div>
+    </div>
+    <div class="website-list phishing">
+        <h2>Phishing Websites Examples (Do not visit these)</h2>
+        <div class="website">https://nozed-uname.firebaseapp.com/</div>
+        <div class="website">http://beta.kenaidanceta.com/postamok/d39a2/source</div>
+        <div class="website">http://vkaktivations23.bos.ru</div>
+        <div class="website">http://https.www.paypal.com.ttlart2012ttcysu.aylandirow.tmf.org.ru/signin/client-log</div>
+        <div class="website">https://ge6lar.webwavecms.com/ebok-pge</div>
+    </div>
+</div>
+</body>
+</html>

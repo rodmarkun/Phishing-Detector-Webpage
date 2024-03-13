@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+.container { max-width: 600px; margin: auto; }
+.website-list { margin-top: 20px; }
+.website-list h2 { color: #333; }
+.non-phishing, .phishing { background-color: #ecffdc; padding: 10px; border-radius: 5px; }
+.phishing { background-color: #ffebeb; }
+.website { margin: 5px 0; }
+a { color: #067df7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+form { margin-top: 20px; }
+input[type=text] { width: 70%; padding: 10px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px; }
+input[type=submit] { padding: 10px 20px; background-color: #067df7; color: white; border: none; border-radius: 5px; cursor: pointer; }
+input[type=submit]:hover { background-color: #0056b3; }
