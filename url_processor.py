@@ -42,7 +42,7 @@ def extract_url_features(url):
     features['longest_word_path'] = len(max(path_words, key=len)) if path_words else 0
 
     # Domain Age, Google Index, Page Rank - Requires external APIs or services
-    domain_info = whois.query(hostname)
+    domain_info = whois.whois(hostname)
     features['domain_age'] = (datetime.now() - domain_info.creation_date).days if domain_info.creation_date else -1
 
     return features
